@@ -1,3 +1,4 @@
+window.addEventListener('DOMContentLoaded', (event) => {
 //Game board MODULE
 const gameBoard = (()=> {
     const gameBoardArr = () => ["x", "0", "x", "x", "0"];
@@ -13,7 +14,8 @@ const gameBoard = (()=> {
     
 })();
 console.log (gameBoard.gameBoardArr());
-console.log(gameBoard.gameBoardDisplay);
+//write the array into the gameBoard div in HTML
+gameBoard.gameBoardDisplay()
 //Module to control the flow of the game
 const displayController = (() => {
 
@@ -27,3 +29,4 @@ const players = (name, mark) => {
 //create players X and 0 respectively
 const playerOne = players("playerOne", "X");
 const playerTwo= players("playerTwo", "0");
+});
