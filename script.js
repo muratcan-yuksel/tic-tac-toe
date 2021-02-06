@@ -4,6 +4,11 @@ const gameBoard = (()=> {
     return {gameBoardArr};
     //can get the array index like this:
     //gameBoard.gameBoardArr()[i];
+    const gameBoardDisplay = () => {
+        const gameBoardHtml = document.getElementById("gameBoard");
+        gameBoardHtml.textContent= gameBoard.gameBoardArr();
+    };
+    return {gameBoardDisplay};
 })();
 //Module to control the flow of the game
 const displayController = (() => {
