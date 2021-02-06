@@ -8,10 +8,13 @@ const gameBoard = (()=> {
 //Module to control the flow of the game
 const displayController = (() => {
 
-    
+
 })();
 //Factory Function for players
 const players = (name, mark) => {
     const trying = () => console.log("works");
     return {name, mark, trying};
 };
+//create players X and 0 respectively
+const playerOne = players("playerOne", "X");
+const playerTwo= players("playerTwo", "0");
