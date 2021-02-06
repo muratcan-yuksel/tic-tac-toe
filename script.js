@@ -1,15 +1,18 @@
 //Game board MODULE
 const gameBoard = (()=> {
     const gameBoardArr = () => ["x", "0", "x", "x", "0"];
-    return {gameBoardArr};
+   // return {gameBoardArr};
     //can get the array index like this:
     //gameBoard.gameBoardArr()[i];
     const gameBoardDisplay = () => {
         const gameBoardHtml = document.getElementById("gameBoard");
         gameBoardHtml.textContent= gameBoard.gameBoardArr();
+        
     };
-    return {gameBoardDisplay};
+    return {gameBoardDisplay,gameBoardArr};
+    
 })();
+
 //Module to control the flow of the game
 const displayController = (() => {
 
