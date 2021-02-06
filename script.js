@@ -7,12 +7,13 @@ const gameBoard = (()=> {
     const gameBoardDisplay = () => {
         const gameBoardHtml = document.getElementById("gameBoard");
         gameBoardHtml.textContent= gameBoard.gameBoardArr();
-        
+         
     };
     return {gameBoardDisplay,gameBoardArr};
     
 })();
-
+console.log (gameBoard.gameBoardArr());
+console.log(gameBoard.gameBoardDisplay);
 //Module to control the flow of the game
 const displayController = (() => {
 
