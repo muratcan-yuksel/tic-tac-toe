@@ -17,8 +17,8 @@ console.log (gameBoard.gameBoardArr());
 //write the array into the gameBoard div in HTML
 gameBoard.gameBoardDisplay()
 //Module to control the flow of the game
-const displayController = (() => {
-
+const gameFlow = (() => {
+//something will come here 
 
 })();
 //Factory Function for players
@@ -29,4 +29,28 @@ const players = (name, mark) => {
 //create players X and 0 respectively
 const playerOne = players("playerOne", "X");
 const playerTwo= players("playerTwo", "0");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
