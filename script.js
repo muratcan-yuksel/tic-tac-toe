@@ -13,15 +13,13 @@ const gameBoard = (()=> {
 })();
 console.log (gameBoard.gameBoardArr());
 //displays the given array index
-//console.log(gameBoard.gameBoardArr()[0][2] === "y"); //returns false bcs it contains an X
-
+//console.log(gameBoard.gameBoardArr()[1][2] === "y"); //returns false bcs it contains an X
 
 //Module to control the flow of the game
 const gameFlow = (() => {
 //something will come here 
 
 })();
-let trysth= gameBoard.gameBoardArr()[0];
 //Factory Function for players
 const players = (name, mark) => {
     //check if it's working
@@ -32,8 +30,7 @@ const players = (name, mark) => {
     //thanks to textcontent= mark
     const play = () => squares.addEventListener("click", function (e){
     e.target.textContent=mark;
-    trysth.push("kiwi");
-    console.log(trysth);
+  
 });
 
     return {name, mark, play};
