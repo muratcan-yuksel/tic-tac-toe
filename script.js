@@ -7,19 +7,13 @@ const gameBoard = (()=> {
    // return {gameBoardArr};
     //can get the array index like this:
     //gameBoard.gameBoardArr()[i];
-    const gameBoardDisplay = () => {
-       // const gameBoardHtml = document.getElementById("gameBoard");
-        gameBoardHtml.textContent= gameBoard.gameBoardArr();
-         
-    };
-    return {gameBoardDisplay,gameBoardArr};
+  
+    return {gameBoardArr};
     
 })();
 console.log (gameBoard.gameBoardArr());
-//write the array into the gameBoard div in HTML
-//gameBoard.gameBoardDisplay()
 //displays the given array index
-//console.log(gameBoard.gameBoardArr()[0][2]);
+//console.log(gameBoard.gameBoardArr()[0][2] === "y"); //returns false bcs it contains an X
 
 //Module to control the flow of the game
 const gameFlow = (() => {
