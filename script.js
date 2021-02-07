@@ -34,7 +34,7 @@ const playerTwo= players("playerTwo", "0");
 
 let divs = document.getElementById('gameBoard');
 divs.addEventListener("click", function (e){
-    e.target.style.backgroundColor="black";
+    e.target.textContent="X";
 });
 
 
