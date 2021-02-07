@@ -32,10 +32,10 @@ const players = (name, mark) => {
 const playerOne = players("playerOne", "X");
 const playerTwo= players("playerTwo", "0");
 
-let divs = document.querySelectorAll(".board");
+let divs = document.getElementById('gameBoard');
 divs.addEventListener("click", function (e){
-    alert ("hop");
-})
+    e.target.style.backgroundColor="black";
+});
 
 
 
