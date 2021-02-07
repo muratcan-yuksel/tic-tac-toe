@@ -32,6 +32,10 @@ const players = (name, mark) => {
 const playerOne = players("playerOne", "X");
 const playerTwo= players("playerTwo", "0");
 
+let divs = document.querySelector(".board");
+divs.addEventListener("click", function (e){
+    alert ("hop");
+})
 
 
 
