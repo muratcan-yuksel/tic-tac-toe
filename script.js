@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-//Game board MODULE
+//get the squares inside the board
+let squares = document.getElementById('gameBoard');
+    //Game board MODULE
 const gameBoard = (()=> {
     const gameBoardArr = () => ["x", "0", "x", "x", "0"];
    // return {gameBoardArr};
@@ -24,16 +26,16 @@ const gameFlow = (() => {
 //Factory Function for players
 const players = (name, mark) => {
     //check if it's working
-    const trying = () => console.log("works");
-    const tryHarder = () => trying();
-    return {name, mark, tryHarder};
+    /*const trying = () => console.log("works");
+    const tryHarder = () => trying();*/
+
+    return {name, mark};
 };
 //create players X and 0 respectively
 const playerOne = players("playerOne", "X");
 const playerTwo= players("playerTwo", "0");
 
-let divs = document.getElementById('gameBoard');
-divs.addEventListener("click", function (e){
+squares.addEventListener("click", function (e){
     e.target.textContent="X";
 });
 
