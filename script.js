@@ -15,7 +15,7 @@ const gameBoard = (()=> {
 })();
 console.log (gameBoard.gameBoardArr());
 //write the array into the gameBoard div in HTML
-gameBoard.gameBoardDisplay()
+//gameBoard.gameBoardDisplay()
 //Module to control the flow of the game
 const gameFlow = (() => {
 //something will come here 
