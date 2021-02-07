@@ -28,16 +28,17 @@ const players = (name, mark) => {
     //check if it's working
     /*const trying = () => console.log("works");
     const tryHarder = () => trying();*/
+const play = () => squares.addEventListener("click", function (e){
+    e.target.textContent=mark;
+});
 
-    return {name, mark};
+    return {name, mark, play};
 };
 //create players X and 0 respectively
 const playerOne = players("playerOne", "X");
 const playerTwo= players("playerTwo", "0");
+playerOne.play();
 
-squares.addEventListener("click", function (e){
-    e.target.textContent="X";
-});
 
 
 
