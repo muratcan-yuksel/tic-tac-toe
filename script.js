@@ -19,7 +19,7 @@ console.log (gameBoard.gameBoardArr());
 //write the array into the gameBoard div in HTML
 //gameBoard.gameBoardDisplay()
 //displays the given array index
-//console.log(gameBoard.gameBoardArr()[2]);
+//console.log(gameBoard.gameBoardArr()[0][2]);
 
 //Module to control the flow of the game
 const gameFlow = (() => {
