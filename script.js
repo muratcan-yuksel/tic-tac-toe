@@ -8,7 +8,7 @@ const gameBoard = (()=> {
     //can get the array index like this:
     //gameBoard.gameBoardArr()[i];
     const gameBoardDisplay = () => {
-        const gameBoardHtml = document.getElementById("gameBoard");
+       // const gameBoardHtml = document.getElementById("gameBoard");
         gameBoardHtml.textContent= gameBoard.gameBoardArr();
          
     };
@@ -18,6 +18,8 @@ const gameBoard = (()=> {
 console.log (gameBoard.gameBoardArr());
 //write the array into the gameBoard div in HTML
 //gameBoard.gameBoardDisplay()
+//displays the given array index
+//console.log(gameBoard.gameBoardArr()[2]);
 //Module to control the flow of the game
 const gameFlow = (() => {
 //something will come here 
@@ -28,7 +30,10 @@ const players = (name, mark) => {
     //check if it's working
     /*const trying = () => console.log("works");
     const tryHarder = () => trying();*/
-const play = () => squares.addEventListener("click", function (e){
+    
+    //this event listener lets the players to mark with their names with player.play() function
+    //thanks to textcontent= mark
+    const play = () => squares.addEventListener("click", function (e){
     e.target.textContent=mark;
 });
 
