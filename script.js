@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 let squares = document.getElementById('gameBoard');
     //Game board MODULE
 const gameBoard = (()=> {
-    const gameBoardArr = () => ["x", "0", "x", "x", "0"];
+    const gameBoardArr = () => [["x", "0", "x", "x", "0"], [],[]];
    // return {gameBoardArr};
     //can get the array index like this:
     //gameBoard.gameBoardArr()[i];
@@ -20,6 +20,7 @@ console.log (gameBoard.gameBoardArr());
 //gameBoard.gameBoardDisplay()
 //displays the given array index
 //console.log(gameBoard.gameBoardArr()[2]);
+
 //Module to control the flow of the game
 const gameFlow = (() => {
 //something will come here 
