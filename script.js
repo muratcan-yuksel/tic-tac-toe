@@ -23,16 +23,14 @@ const gameFlow = (() => {
 })();
 //Factory Function for players
 const players = (name, mark) => {
+    //check if it's working
     const trying = () => console.log("works");
-    return {name, mark, trying};
+    const tryHarder = () => trying();
+    return {name, mark, tryHarder};
 };
 //create players X and 0 respectively
 const playerOne = players("playerOne", "X");
 const playerTwo= players("playerTwo", "0");
-
-
-
-
 
 
 
