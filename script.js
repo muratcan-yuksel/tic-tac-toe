@@ -22,9 +22,11 @@ const players = (name, mark) => {
     //thanks to textcontent= mark
     const play = () => squares.addEventListener("click", function (e){
     e.target.textContent=mark;
+    //push the last mark into the array in the game board
     gameBoard.boardArr.push(mark);
-    
+    //log it
     console.log(gameBoard.boardArr);
+    console.log(gameBoard.boardArr[1]==="O");
   
 });
 
@@ -32,12 +34,15 @@ const players = (name, mark) => {
 };
 //create players X and 0 respectively
 const playerOne = players("playerOne", "X");
-const playerTwo= players("playerTwo", "0");
+const playerTwo= players("playerTwo", "O");
 
 
 //Module to control the flow of the game
 const gameFlow = (() => {
-    playerOne.play();
+    playerTwo.play();
+    if (gameBoard.boardArr[gameBoard.boardArr.length -1] == "X"){
+        return console.log("xx");
+    }else {return console.log("oo")}
     
   
     
