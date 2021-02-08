@@ -22,8 +22,9 @@ const players = (name, mark) => {
     //thanks to textcontent= mark
     const play = () => squares.addEventListener("click", function (e){
     e.target.textContent=mark;
+    gameBoard.boardArr.push(mark);
     
-    
+    console.log(gameBoard.boardArr);
   
 });
 
