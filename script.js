@@ -5,19 +5,8 @@ let squares = document.getElementById('gameBoard');
 const gameBoard = {
     boardArr : []
 }
-
-
-//console.log (gameBoard.gameBoardArr());
-//displays the given array index
-//console.log(gameBoard.gameBoardArr()[1][2] === "y"); //returns false bcs it contains an X
-
-
 //Factory Function for players
-const players = (name, mark) => {
-    //check if it's working
-    /*const trying = () => console.log("works");
-    const tryHarder = () => trying();*/
-    
+const players = (name, mark) => {  
     //this event listener lets the players to mark with their names with player.play() function
     //thanks to textcontent= mark
     const play = () => squares.addEventListener("click", function (e){
@@ -44,13 +33,8 @@ const playerTwo= players("playerTwo", "O");
 
 //Module to control the flow of the game
 const gameFlow = (() => {
-    playerTwo.play();
-    if (gameBoard.boardArr[gameBoard.boardArr.length -1] == "X"){
-        return console.log("xx");
-    }else {return console.log("oo")}
-    
-  
-    
+    playerOne.play();
+     
     
     })();
 
