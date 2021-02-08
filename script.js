@@ -2,16 +2,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
 //get the squares inside the board
 let squares = document.getElementById('gameBoard');
     //Game board MODULE
-const gameBoard = (()=> {
-    const gameBoardArr = () => [["x", "0", "x", "x", "0"], [],[]];
-   // return {gameBoardArr};
-    //can get the array index like this:
-    //gameBoard.gameBoardArr()[i];
-  
-    return {gameBoardArr};
-    
-})();
-console.log (gameBoard.gameBoardArr());
+const gameBoard = {
+    boardArr : []
+}
+
+
+//console.log (gameBoard.gameBoardArr());
 //displays the given array index
 //console.log(gameBoard.gameBoardArr()[1][2] === "y"); //returns false bcs it contains an X
 
@@ -27,6 +23,7 @@ const players = (name, mark) => {
     const play = () => squares.addEventListener("click", function (e){
     e.target.textContent=mark;
     
+    
   
 });
 
@@ -40,6 +37,8 @@ const playerTwo= players("playerTwo", "0");
 //Module to control the flow of the game
 const gameFlow = (() => {
     playerOne.play();
+    
+  
     
     
     })();
