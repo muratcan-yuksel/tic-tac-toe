@@ -7,8 +7,6 @@ const gameBoard = {
 //Factory Function for players
 const players = (name, mark) => {  
 
-});
-
     return {name, mark};
 };
 //create players X and 0 respectively
