@@ -26,7 +26,12 @@ const players = (name, mark) => {
     gameBoard.boardArr.push(mark);
     //log it
     console.log(gameBoard.boardArr);
-    console.log(gameBoard.boardArr[1]==="O");
+    console.log(gameBoard.boardArr[gameBoard.boardArr.length -1]==="O");
+    if (gameBoard.boardArr[gameBoard.boardArr.length -1]==="O"){
+        return playerOne.play();
+    } else if (gameBoard.boardArr[gameBoard.boardArr.length -1]==="X"){
+        return playerTwo.play();
+    }
   
 });
 
