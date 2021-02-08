@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', (event) => {
+//window.addEventListener('DOMContentLoaded', (event) => {
 //get the squares inside the board
 let squares = document.getElementById('gameBoard');
     //Game board MODULE
@@ -36,7 +36,7 @@ const gameFlow = (() => {
     playerOne.play();
      
     
-    })();
+})();
 
 
 
@@ -53,4 +53,4 @@ const gameFlow = (() => {
 
 
 
-});
+//});
