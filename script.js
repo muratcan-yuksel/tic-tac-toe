@@ -15,11 +15,7 @@ console.log (gameBoard.gameBoardArr());
 //displays the given array index
 //console.log(gameBoard.gameBoardArr()[1][2] === "y"); //returns false bcs it contains an X
 
-//Module to control the flow of the game
-const gameFlow = (() => {
-//something will come here 
 
-})();
 //Factory Function for players
 const players = (name, mark) => {
     //check if it's working
@@ -30,6 +26,7 @@ const players = (name, mark) => {
     //thanks to textcontent= mark
     const play = () => squares.addEventListener("click", function (e){
     e.target.textContent=mark;
+    
   
 });
 
@@ -38,11 +35,14 @@ const players = (name, mark) => {
 //create players X and 0 respectively
 const playerOne = players("playerOne", "X");
 const playerTwo= players("playerTwo", "0");
-playerOne.play();
 
 
-
-
+//Module to control the flow of the game
+const gameFlow = (() => {
+    playerOne.play();
+    
+    
+    })();
 
 
 
