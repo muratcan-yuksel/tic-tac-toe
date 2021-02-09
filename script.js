@@ -10,8 +10,13 @@ const gameBoard = {
 
 //Factory Function for players
 const players = (name, mark) => {  
+    //function to add player's own mark to the gameBoard.boardArr array
+    const play=()=>{
+        let gameBoardArr=gameBoard.boardArr;
+        gameBoardArr.push(mark);
+    }
 
-    return {name, mark};
+    return {name, mark, play};
 };
 //create players X and 0 respectively
 const playerOne = players("playerOne", "X");
@@ -20,7 +25,7 @@ const playerTwo= players("playerTwo", "O");
 
 //display controller module
 const displayController = (() => {
-    //sth will come in here
+    //take the last item of the boardArr array and display it on the clicked square
     squares.addEventListener("click", function (e){
         if (e.target.className ==="squares"){
         e.target.textContent= gameBoard.boardArr[gameBoard.boardArr.length -1];
