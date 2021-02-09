@@ -30,12 +30,14 @@ const displayController = (() => {
         if (e.target.className ==="squares"){
         e.target.textContent= gameBoard.boardArr[gameBoard.boardArr.length -1];
         }
-      
+        //invoke the function that let the players take turns
+      gameFlow.turnerFunc();
     })
 })();
 
 //Module to control the flow of the game
 const gameFlow = (() => {
+    //function that let the players take turns
    const turnerFunc = () => {
     if(turn){
         playerOne.play();
@@ -44,10 +46,11 @@ const gameFlow = (() => {
     }
     turn=!turn;
    }
+   //return to function to use it in display controller
    return {turnerFunc};
 })();
 
-console.log(gameFlow.turnerFunc());
+
 
 
 
