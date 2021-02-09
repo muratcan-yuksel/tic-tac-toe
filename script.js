@@ -20,15 +20,16 @@ const playerTwo= players("playerTwo", "O");
 //display controller module
 const displayController = (() => {
     //sth will come in here
+    squares.addEventListener("click", function (e){
+        e.target.textContent= gameBoard.boardArr[gameBoard.boardArr.length -1];
+    })
 })();
 //Module to control the flow of the game
 const gameFlow = (() => {
     
 })();
 
-squares.addEventListener("click", function (e){
-    e.target.textContent= gameBoard.boardArr[gameBoard.boardArr.length -1];
-})
+
 
 
 
