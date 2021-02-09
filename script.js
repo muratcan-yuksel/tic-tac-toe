@@ -25,9 +25,15 @@ const playerTwo= players("playerTwo", "O");
 //display controller module
 const displayController = (() => {
     //take the last item of the boardArr array and display it on the clicked square
-    squares.addEventListener("click", function (e){
+    squares.addEventListener("click", function (e){  
         if (e.target.className ==="squares"){
-        e.target.textContent= gameBoard.boardArr[gameBoard.boardArr.length -1];
+            //if the array is empty, mark X (the first player)
+            if (gameBoard.boardArr[gameBoard.boardArr.length -1] === undefined){
+                e.target.textContent= "X";
+            }else{
+                //if there's something in the array, get the last one and write it into the square
+                e.target.textContent= gameBoard.boardArr[gameBoard.boardArr.length -1];
+            }
         }
         //invoke the function that let the players take turns
       gameFlow.turnerFunc();
@@ -38,11 +44,14 @@ let turn = true;
 //Module to control the flow of the game
 const gameFlow = (() => {
     //function that let the players take turns
+    //starts with playerTwo
+    //because if not, there will be two subsequent X's
+    //see displayController function for why
    const turnerFunc = () => {
     if(turn){
-        playerOne.play();
-    }else {
         playerTwo.play();
+    }else {
+        playerOne.play();
     }
     turn=!turn;
    }
@@ -57,14 +66,18 @@ const gameFlow = (() => {
 
 
 /*
-{ if(turn){
-        playerOne.play();
-    }else {
-        playerTwo.play();
-    }
-    turn=!turn;
-   
-}
+ //make sure the first mark is X
+    if (typeof )
+    const firstMark = (function() {
+        let executed = false;
+        return function() {
+            if (!executed) {
+                executed = true;
+                // do something
+            }
+        };
+    })();
+
 */
 
 
