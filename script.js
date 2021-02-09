@@ -22,7 +22,7 @@ const players = (name, mark) => {
 const playerOne = players("playerOne", "X");
 const playerTwo= players("playerTwo", "O");
 
-
+let turn = true;
 //display controller module
 const displayController = (() => {
     //take the last item of the boardArr array and display it on the clicked square
@@ -30,12 +30,23 @@ const displayController = (() => {
         if (e.target.className ==="squares"){
         e.target.textContent= gameBoard.boardArr[gameBoard.boardArr.length -1];
         }
+       turnerFunc();
     })
 })();
+
 //Module to control the flow of the game
 const gameFlow = (() => {
-    
+   const turnerFunc=()=>{ if(turn){
+        playerOne.play();
+    }else {
+        playerTwo.play();
+    }
+    turn=!turn;
+}
+return turnerFunc;
+   
 })();
+
 
 
 
