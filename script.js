@@ -17,11 +17,14 @@ const players = (name, mark) => {
 const playerOne = players("playerOne", "X");
 const playerTwo= players("playerTwo", "O");
 
+
 //display controller module
 const displayController = (() => {
     //sth will come in here
     squares.addEventListener("click", function (e){
+        if (e.target.className ==="squares"){
         e.target.textContent= gameBoard.boardArr[gameBoard.boardArr.length -1];
+        }
     })
 })();
 //Module to control the flow of the game
