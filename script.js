@@ -1,8 +1,8 @@
 //get the squares inside the board
 let squares = document.getElementById('gameBoard');
-    //Game board MODULE
+//store the gameboard array inside of a gameboard object
 const gameBoard = {
-    boardArr : []
+    boardArr : ["X","X","O","X", "O"]
 }
 
 //Factory Function for players
@@ -24,7 +24,9 @@ const gameFlow = (() => {
 })();
 
 
-
+const foo = () =>{
+    alert("oh");
+}
 
 
 
