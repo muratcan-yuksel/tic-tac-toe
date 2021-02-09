@@ -31,7 +31,7 @@ let noop = () => {};
 let foo = () => {
     //swap the functions
     foo=noop;
-    gameBoard.boardArr.pop();
+   // gameBoard.boardArr.pop();
    console.log("yoyo");
 }
     //take the last item of the boardArr array and display it on the clicked square
