@@ -24,16 +24,25 @@ const playerTwo= players("playerTwo", "O");
 
 //display controller module
 const displayController = (() => {
+    //create a reusable No operation function
+//this function does nothing
+let noop = () => {};
+//create the function that'll take the unnecessary X from the array
+let foo = () => {
+    //swap the functions
+    foo=noop;
+    gameBoard.boardArr.pop();
+   console.log("yoyo");
+}
     //take the last item of the boardArr array and display it on the clicked square
     squares.addEventListener("click", function (e){  
         if (e.target.className ==="squares"){
-    
                 e.target.textContent= gameBoard.boardArr[gameBoard.boardArr.length -1];
-        
+                foo();     
         }
         //invoke the function that let the players take turns
       gameFlow.turnerFunc();
-     //console.log( gameFlow.foo());
+
     })
 })();
 //variable to check the condition of turning rounds
@@ -49,7 +58,16 @@ const gameFlow = (() => {
     }
     turn=!turn;
    }
-   //create a reusable No operation function
+
+   
+   //return to function to use it in display controller
+   return {turnerFunc};
+})();
+
+
+
+/*
+//create a reusable No operation function
 //this function does nothing
 let noop = () => {};
 //create the function that'll take the unnecessary X from the array
@@ -58,14 +76,7 @@ let foo = () => {
     foo=noop;
     gameBoard.boardArr.pop();
 }
-   
-   //return to function to use it in display controller
-   return {turnerFunc, foo};
-})();
-
-
-
-
+*/
 
 /*
  //if the array is empty, mark X (the first player)
