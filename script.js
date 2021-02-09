@@ -24,6 +24,34 @@ const playerTwo= players("playerTwo", "O");
 
 //display controller module
 const displayController = (() => {
+
+    })
+})();
+//variable to check the condition of turning rounds
+let turn = true;
+//Module to control the flow of the game
+const gameFlow = (() => {
+    //function that let the players take turns
+   const turnerFunc = () => {
+    if(turn){
+        playerOne.play();
+    }else {
+        playerTwo.play();
+    }
+    turn=!turn;
+   }
+
+   
+   //return to function to use it in display controller
+   return {turnerFunc};
+})();
+
+
+
+/*
+
+//display controller module
+const displayController = (() => {
     //create a reusable No operation function
 //this function does nothing
 let noop = () => {};
@@ -64,7 +92,7 @@ const gameFlow = (() => {
    return {turnerFunc};
 })();
 
-
+*/
 
 /*
 //create a reusable No operation function
