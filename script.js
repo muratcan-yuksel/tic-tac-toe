@@ -30,30 +30,39 @@ const displayController = (() => {
         if (e.target.className ==="squares"){
         e.target.textContent= gameBoard.boardArr[gameBoard.boardArr.length -1];
         }
-       turnerFunc();
+      
     })
 })();
 
 //Module to control the flow of the game
 const gameFlow = (() => {
-   const turnerFunc=()=>{ if(turn){
+   const turnerFunc = () => {
+    if(turn){
         playerOne.play();
     }else {
         playerTwo.play();
     }
     turn=!turn;
-}
-return turnerFunc;
-   
+   }
+   return {turnerFunc};
 })();
 
+console.log(gameFlow.turnerFunc());
 
 
 
 
 
-
-
+/*
+{ if(turn){
+        playerOne.play();
+    }else {
+        playerTwo.play();
+    }
+    turn=!turn;
+   
+}
+*/
 
 
 
