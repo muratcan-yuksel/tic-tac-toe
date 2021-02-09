@@ -1,10 +1,13 @@
+//Note: your array functions a bit different from the what's visible
+//meaning that when you see an X, your array gets an O
+
 //get the squares inside the board
 let squares = document.getElementById('gameBoard');
 //store the gameboard array inside of a gameboard object
 const gameBoard = {
     //if I leave the array empty, the code won't work 
     //bcs the array index listener won't be finding anything
-    boardArr : ["X"]
+    boardArr : []
     /* this one displays the last array element, which is X at the moment
     console.log(gameBoard.boardArr[gameBoard.boardArr.length -1]);
     */
@@ -28,12 +31,18 @@ const playerTwo= players("playerTwo", "O");
 const displayController = (() => {
     let i = 0;
     squares.addEventListener("click", function (e){  
+          //invoke the function that let the players take turns
+      gameFlow.turnerFunc();
         if (e.target.className ==="squares"){
                 e.target.textContent= gameBoard.boardArr[i];
                 i++;
+                /*
+                check if the event is cancelable with the preventdefault
+                var x = e.cancelable;
+                console.log(x); YES IT IS 
+                */
         }
-        //invoke the function that let the players take turns
-      gameFlow.turnerFunc();
+      
     
     })
     
@@ -46,17 +55,14 @@ const gameFlow = (() => {
     //start with player 2 bcs the array already contains a pregiven X
    const turnerFunc = () => {
     if(turn){
-        playerTwo.play();
-    }else {
         playerOne.play();
+    }else {
+        playerTwo.play();
     }
     turn=!turn;
    }
-
-   
    //return the function to use it in display controller
    return {turnerFunc};
 })();
 
 
-//when the game ends, just shift() the array
