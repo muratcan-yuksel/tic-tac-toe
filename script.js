@@ -2,7 +2,7 @@
 let squares = document.getElementById('gameBoard');
 //store the gameboard array inside of a gameboard object
 const gameBoard = {
-    boardArr : []
+    boardArr : ["X"]
     /* this one displays the last array element, which is X at the moment
     console.log(gameBoard.boardArr[gameBoard.boardArr.length -1]);
     */
@@ -27,13 +27,9 @@ const displayController = (() => {
     //take the last item of the boardArr array and display it on the clicked square
     squares.addEventListener("click", function (e){  
         if (e.target.className ==="squares"){
-            //if the array is empty, mark X (the first player)
-            if (gameBoard.boardArr[gameBoard.boardArr.length -1] === undefined){
-                e.target.textContent= "X";
-            }else{
-                //if there's something in the array, get the last one and write it into the square
+    
                 e.target.textContent= gameBoard.boardArr[gameBoard.boardArr.length -1];
-            }
+        
         }
         //invoke the function that let the players take turns
       gameFlow.turnerFunc();
@@ -44,17 +40,24 @@ let turn = true;
 //Module to control the flow of the game
 const gameFlow = (() => {
     //function that let the players take turns
-    //starts with playerTwo
-    //because if not, there will be two subsequent X's
-    //see displayController function for why
    const turnerFunc = () => {
     if(turn){
-        playerTwo.play();
-    }else {
         playerOne.play();
+    }else {
+        playerTwo.play();
     }
     turn=!turn;
    }
+   //create a reusable No operation function
+//this function does nothing
+let noop = () => {};
+//create the function that'll take the unnecessary X from the array
+let foo = () => {
+    //swap the functions
+    foo=noop;
+    gameBoard.boardArr.pop();
+}
+   
    //return to function to use it in display controller
    return {turnerFunc};
 })();
@@ -63,6 +66,12 @@ const gameFlow = (() => {
 
 
 
+/*
+ //if the array is empty, mark X (the first player)
+            if (gameBoard.boardArr[gameBoard.boardArr.length -1] === undefined){
+                e.target.textContent= "X";
+            }
+            */
 
 
 /*
