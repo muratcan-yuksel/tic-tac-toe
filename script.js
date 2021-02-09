@@ -4,6 +4,7 @@ let squares = document.getElementById('gameBoard');
 const gameBoard = {
     boardArr : []
 }
+
 //Factory Function for players
 const players = (name, mark) => {  
 
@@ -13,7 +14,10 @@ const players = (name, mark) => {
 const playerOne = players("playerOne", "X");
 const playerTwo= players("playerTwo", "O");
 
-
+//display controller module
+const displayController = (() => {
+    //sth will come in here
+})();
 //Module to control the flow of the game
 const gameFlow = (() => {
     
