@@ -24,8 +24,17 @@ const playerTwo= players("playerTwo", "O");
 
 //display controller module
 const displayController = (() => {
+    let i = 0;
+    squares.addEventListener("click", function (e){  
+        if (e.target.className ==="squares"){
+                e.target.textContent= gameBoard.boardArr[i];
+                i++;
+        }
+        //invoke the function that let the players take turns
+      gameFlow.turnerFunc();
 
     })
+    
 })();
 //variable to check the condition of turning rounds
 let turn = true;
