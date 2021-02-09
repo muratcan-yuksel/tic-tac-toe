@@ -26,10 +26,8 @@ const gameFlow = (() => {
     
 })();
 
-let squares1 = document.querySelectorAll(".squares");
-console.log(squares1);
 squares.addEventListener("click", function (e){
-    e.target.textContent= "oog";
+    e.target.textContent= gameBoard.boardArr[gameBoard.boardArr.length -1];
 })
 
 
