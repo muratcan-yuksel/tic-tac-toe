@@ -33,6 +33,7 @@ const displayController = (() => {
         }
         //invoke the function that let the players take turns
       gameFlow.turnerFunc();
+     //console.log( gameFlow.foo());
     })
 })();
 //variable to check the condition of turning rounds
@@ -59,7 +60,7 @@ let foo = () => {
 }
    
    //return to function to use it in display controller
-   return {turnerFunc};
+   return {turnerFunc, foo};
 })();
 
 
