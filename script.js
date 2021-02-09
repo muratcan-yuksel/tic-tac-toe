@@ -2,7 +2,7 @@
 let squares = document.getElementById('gameBoard');
 //store the gameboard array inside of a gameboard object
 const gameBoard = {
-    boardArr : ["X","X","O","X",]
+    boardArr : []
     /* this one displays the last array element, which is X at the moment
     console.log(gameBoard.boardArr[gameBoard.boardArr.length -1]);
     */
@@ -22,7 +22,6 @@ const players = (name, mark) => {
 const playerOne = players("playerOne", "X");
 const playerTwo= players("playerTwo", "O");
 
-let turn = true;
 //display controller module
 const displayController = (() => {
     //take the last item of the boardArr array and display it on the clicked square
@@ -34,7 +33,8 @@ const displayController = (() => {
       gameFlow.turnerFunc();
     })
 })();
-
+//variable to check the condition of turning rounds
+let turn = true;
 //Module to control the flow of the game
 const gameFlow = (() => {
     //function that let the players take turns
