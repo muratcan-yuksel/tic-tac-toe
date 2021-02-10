@@ -28,10 +28,16 @@ const playerTwo= players("playerTwo", "O");
 const displayController = (() => {
     let i = 0;
     squares.addEventListener("click", function (e){  
-        //invoke the function that lets the players take turns
-        gameFlow.turnerFunc();
+        
             //make sure you're targeting the squares and not the whitespace in between them
             if (e.target.className ==="squares"){
+                    //logic that keeps players from playing in spots that are already taken
+                if (e.target.textContent=="X" || e.target.textContent=="O"){
+                    return;
+                }else{
+                    //invoke the function that lets the players take turns
+                    //this is here bcs if not whenever I push an occupied place, the array gets pushed nevertheless
+                    gameFlow.turnerFunc();
                     //array elements are written in squares, the array index gets incremented
                     e.target.textContent= gameBoard.boardArr[i];
                     i++;
@@ -40,6 +46,9 @@ const displayController = (() => {
                     var x = e.cancelable;
                     console.log(x); YES IT IS 
                     */
+
+                }
+                   
             }
       
     
@@ -63,5 +72,12 @@ const gameFlow = (() => {
         //return the function to use it in display controller
         return {turnerFunc};
 })();
+/*
+const markBoard= (()=>{
 
 
+
+
+
+})();
+*/
