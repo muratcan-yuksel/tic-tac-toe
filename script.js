@@ -4,6 +4,7 @@ let squares = document.getElementById('gameBoard');
 const gameBoard = {
     boardArr : []
 }
+
 //Factory Function for players
 const players = (name, mark) => {  
     //function to add player's own mark to the gameBoard.boardArr array
@@ -25,10 +26,13 @@ const gameFlow = (() => {
    const turnerFunc = () => {
         if(turn){
             playerOne.play();
+           
         }else {
             playerTwo.play();
+           
         }
         turn=!turn;
+        gameResult.checkResult();
     }
         //return the function to use it in display controller
         return {turnerFunc};
@@ -61,7 +65,7 @@ const markBoard= (()=>{
                     }
                        
                 }
-          
+              
         })
 
 
@@ -78,19 +82,24 @@ const displayController = (() => {
   
  })();
 
- const checkWinner = (()=>{
-let squareOneText = document.getElementById("one").textContent;
-let squareTwoText = document.getElementById("two").textContent;
-let squareThreeText = document.getElementById("three").textContent;
-let squareFourText = document.getElementById("four").textContent;
-let squareFiveText = document.getElementById("five").textContent;
-let squareSixText = document.getElementById("six").textContent;
-let squareSevenText = document.getElementById("seven").textContent;
-let squareEightText = document.getElementById("eight").textContent;
-let squareNineText = document.getElementById("nine").textContent;
 
- }
- )();
-
+ const gameResult = (()=>{
+    let squareOneText = document.getElementById("one").textContent;
+    let squareTwoText = document.getElementById("two").textContent;
+    let squareThreeText = document.getElementById("three").textContent;
+    let squareFourText = document.getElementById("four").textContent;
+    let squareFiveText = document.getElementById("five").textContent;
+    let squareSixText = document.getElementById("six").textContent;
+    let squareSevenText = document.getElementById("seven").textContent;
+    let squareEightText = document.getElementById("eight").textContent;
+    let squareNineText = document.getElementById("nine").textContent;
+        const checkResult = () =>{
+            if (document.getElementById("one").textContent == "X"){
+                console.log("oned");
+            }
+        }
+        return {checkResult}
+     }
+     )();
 
  
