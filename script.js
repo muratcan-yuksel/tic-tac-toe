@@ -160,10 +160,10 @@ const displayController = (() => {
 
      function controlGame(){
        
-        if (gameBoard.boardArr.length==9)
-        {alert ("end")
-        //gameBoard.boardArr.splice(0,9);
-            return;
+        if (gameBoard.boardArr.length==9){
+             //freeze the gameBoard (container) div
+             document.getElementById("gameBoard").classList.add("freeze");  
+             alert("tie!");
         }else{
         
         gameResult.checkResult();
