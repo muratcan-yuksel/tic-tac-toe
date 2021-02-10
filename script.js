@@ -33,6 +33,15 @@ const gameFlow = (() => {
         //return the function to use it in display controller
         return {turnerFunc};
 })();
+const finishGame = (()=> {
+    let squareOneText= document.getElementById("one").textContent;
+    const alert = () => {
+       if (gameBoard.boardArr.length===9){
+           console.log("yess");
+       }
+    }
+    return {alert}
+})();
 //module that returns the factory function that takes the user input manually and marks the board
 const markBoard= (()=>{
     const manualMark = () => {
@@ -62,7 +71,7 @@ const markBoard= (()=>{
                        
                 }
           
-        
+                finishGame.alert();
         })
 
 
@@ -70,20 +79,12 @@ const markBoard= (()=>{
     return {manualMark}
 })();
 
-const finishGame = (()=> {
-    let squareOneText= document.getElementById("one").textContent;
-    const alert = () => {
-        if ( gameBoard.boardArr.length == 9){
-            alert ("done");
-        }
-    }
-    return {alert}
-})();
+
 
 //display controller module
 const displayController = (() => {
     //call the module that returns the factory function that takes the user input manually and marks the board
     markBoard.manualMark();
     finishGame.alert();
-     
+    finishGame.alert();
  })();
