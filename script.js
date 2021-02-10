@@ -102,11 +102,17 @@ const displayController = (() => {
      )();
 
 
-     function yourFunction(){
-        // do whatever you like here
+ 
+   
+     function controlGame(){
+       
+        if (gameBoard.boardArr.length==9)
+        {return;}else{
+             // do whatever you like here
         gameResult.checkResult();
-        setTimeout(yourFunction, 5000);
+        setTimeout(controlGame, 1000);
+        }
     }
     
-    yourFunction();
-   
+ controlGame();
+    
