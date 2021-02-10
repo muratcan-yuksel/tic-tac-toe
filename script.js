@@ -69,9 +69,21 @@ const markBoard= (()=>{
     }
     return {manualMark}
 })();
+
+const finishGame = (()=> {
+    let squareOneText= document.getElementById("one").textContent;
+    const alert = () => {
+        if ( gameBoard.boardArr.length == 9){
+            alert ("done");
+        }
+    }
+    return {alert}
+})();
+
 //display controller module
 const displayController = (() => {
     //call the module that returns the factory function that takes the user input manually and marks the board
     markBoard.manualMark();
+    finishGame.alert();
      
  })();
