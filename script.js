@@ -32,7 +32,6 @@ const gameFlow = (() => {
            
         }
         turn=!turn;
-        gameResult.checkResult();
     }
         //return the function to use it in display controller
         return {turnerFunc};
@@ -102,4 +101,12 @@ const displayController = (() => {
      }
      )();
 
- 
+
+     function yourFunction(){
+        // do whatever you like here
+        gameResult.checkResult();
+        setTimeout(yourFunction, 5000);
+    }
+    
+    yourFunction();
+   
