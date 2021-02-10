@@ -87,40 +87,70 @@ const displayController = (() => {
      //Check all the possible winning combinations, and do something with it
         const checkResult = () =>{
             if (document.getElementById("one").textContent == "X" && document.getElementById("two").textContent == "X" && document.getElementById("three").textContent=="X"){
-                console.log("Player X Wins!");    
-                //free the gameBoard (container) div
-               document.getElementById("gameBoard").classList.add("freeze");         
+                    console.log("Player X Wins!");    
+                    //freeze the gameBoard (container) div
+                    document.getElementById("gameBoard").classList.add("freeze");         
                 }else if (document.getElementById("four").textContent == "X" && document.getElementById("five").textContent == "X" && document.getElementById("six").textContent=="X"){
                     console.log("Player X Wins!");
+                    //freeze the gameBoard (container) div
+                    document.getElementById("gameBoard").classList.add("freeze");  
                 }else if (document.getElementById("seven").textContent == "X" && document.getElementById("eight").textContent == "X" && document.getElementById("nine").textContent=="X"){
                     console.log("Player X Wins!");
+                    //freeze the gameBoard (container) div
+                    document.getElementById("gameBoard").classList.add("freeze");  
                 }else if (document.getElementById("one").textContent == "X" && document.getElementById("four").textContent == "X" && document.getElementById("seven").textContent=="X"){
                     console.log("Player X Wins!");
+                    //freeze the gameBoard (container) div
+                    document.getElementById("gameBoard").classList.add("freeze");  
                 }else if (document.getElementById("two").textContent == "X" && document.getElementById("five").textContent == "X" && document.getElementById("eight").textContent=="X"){
                     console.log("Player X Wins!");
+                    //freeze the gameBoard (container) div
+                    document.getElementById("gameBoard").classList.add("freeze");  
                 }else if (document.getElementById("three").textContent == "X" && document.getElementById("six").textContent == "X" && document.getElementById("nine").textContent=="X"){
                     console.log("Player X Wins!");
+                    //freeze the gameBoard (container) div
+                    document.getElementById("gameBoard").classList.add("freeze");  
                 }else if (document.getElementById("one").textContent == "X" && document.getElementById("five").textContent == "X" && document.getElementById("nine").textContent=="X"){
                     console.log("Player X Wins!");
+                    //freeze the gameBoard (container) div
+                    document.getElementById("gameBoard").classList.add("freeze");  
                 }else if (document.getElementById("three").textContent == "X" && document.getElementById("five").textContent == "X" && document.getElementById("seven").textContent=="X"){
                     console.log("Player X Wins!");
+                    //freeze the gameBoard (container) div
+                    document.getElementById("gameBoard").classList.add("freeze");  
             }//Player O's turn
                     else  if (document.getElementById("one").textContent == "O" && document.getElementById("two").textContent == "O" && document.getElementById("three").textContent=="O"){
                         console.log("Player O Wins!");
+                        //freeze the gameBoard (container) div
+                         document.getElementById("gameBoard").classList.add("freeze");  
                     }else if (document.getElementById("four").textContent == "O" && document.getElementById("five").textContent == "O" && document.getElementById("six").textContent=="O"){
                         console.log("Player O Wins!");
+                         //freeze the gameBoard (container) div
+                         document.getElementById("gameBoard").classList.add("freeze");  
                     }else if (document.getElementById("seven").textContent == "O" && document.getElementById("eight").textContent == "O" && document.getElementById("nine").textContent=="O"){
                         console.log("Player O Wins!");
+                         //freeze the gameBoard (container) div
+                         document.getElementById("gameBoard").classList.add("freeze");  
                     }else if (document.getElementById("one").textContent == "O" && document.getElementById("four").textContent == "O" && document.getElementById("seven").textContent=="O"){
                         console.log("Player O Wins!");
+                         //freeze the gameBoard (container) div
+                         document.getElementById("gameBoard").classList.add("freeze");  
                     }else if (document.getElementById("two").textContent == "O" && document.getElementById("five").textContent == "O" && document.getElementById("eight").textContent=="O"){
                         console.log("Player O Wins!");
+                         //freeze the gameBoard (container) div
+                         document.getElementById("gameBoard").classList.add("freeze");  
                     }else if (document.getElementById("three").textContent == "O" && document.getElementById("six").textContent == "O" && document.getElementById("nine").textContent=="O"){
                         console.log("Player O Wins!");
+                         //freeze the gameBoard (container) div
+                         document.getElementById("gameBoard").classList.add("freeze");  
                     }else if (document.getElementById("one").textContent == "O" && document.getElementById("five").textContent == "O" && document.getElementById("nine").textContent=="O"){
                         console.log("Player O Wins!");
+                         //freeze the gameBoard (container) div
+                         document.getElementById("gameBoard").classList.add("freeze");  
                     }else if (document.getElementById("three").textContent == "O" && document.getElementById("five").textContent == "O" && document.getElementById("seven").textContent=="O"){
                         console.log("Player O Wins!");
+                         //freeze the gameBoard (container) div
+                         document.getElementById("gameBoard").classList.add("freeze");  
                     }
 
         }
