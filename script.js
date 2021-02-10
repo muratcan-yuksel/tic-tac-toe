@@ -109,6 +109,23 @@ const displayController = (() => {
                 console.log("Player X Wins!");
             }else if (document.getElementById("three").textContent == "X" && document.getElementById("five").textContent == "X" && document.getElementById("seven").textContent=="X"){
                 console.log("Player X Wins!");
+            }//Player O's turn
+            else  if (document.getElementById("one").textContent == "O" && document.getElementById("two").textContent == "O" && document.getElementById("three").textContent=="O"){
+                console.log("Player O Wins!");
+            }else if (document.getElementById("four").textContent == "O" && document.getElementById("five").textContent == "O" && document.getElementById("six").textContent=="O"){
+                console.log("Player O Wins!");
+            }else if (document.getElementById("seven").textContent == "O" && document.getElementById("eight").textContent == "O" && document.getElementById("nine").textContent=="O"){
+                console.log("Player O Wins!");
+            }else if (document.getElementById("one").textContent == "O" && document.getElementById("four").textContent == "O" && document.getElementById("seven").textContent=="O"){
+                console.log("Player O Wins!");
+            }else if (document.getElementById("two").textContent == "O" && document.getElementById("five").textContent == "O" && document.getElementById("eight").textContent=="O"){
+                console.log("Player O Wins!");
+            }else if (document.getElementById("three").textContent == "O" && document.getElementById("six").textContent == "O" && document.getElementById("nine").textContent=="O"){
+                console.log("Player O Wins!");
+            }else if (document.getElementById("one").textContent == "O" && document.getElementById("five").textContent == "O" && document.getElementById("nine").textContent=="O"){
+                console.log("Player O Wins!");
+            }else if (document.getElementById("three").textContent == "O" && document.getElementById("five").textContent == "O" && document.getElementById("seven").textContent=="O"){
+                console.log("Player O Wins!");
             }
 
         }
