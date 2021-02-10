@@ -93,7 +93,7 @@ const displayController = (() => {
     let squareEightText = document.getElementById("eight").textContent;
     let squareNineText = document.getElementById("nine").textContent;
         const checkResult = () =>{
-            if (document.getElementById("one").textContent == "X"){
+            if (document.getElementById("one").textContent == "X" && document.getElementById("two").textContent == "X" && document.getElementById("three").textContent=="X"){
                 console.log("oned");
             }
         }
@@ -107,10 +107,12 @@ const displayController = (() => {
      function controlGame(){
        
         if (gameBoard.boardArr.length==9)
-        {return;}else{
-             // do whatever you like here
+        {alert ("end")
+            return;
+        }else{
+        
         gameResult.checkResult();
-        setTimeout(controlGame, 1000);
+        setTimeout(controlGame, 200);
         }
     }
     
