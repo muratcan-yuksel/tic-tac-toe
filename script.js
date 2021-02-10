@@ -94,8 +94,23 @@ const displayController = (() => {
     let squareNineText = document.getElementById("nine").textContent;
         const checkResult = () =>{
             if (document.getElementById("one").textContent == "X" && document.getElementById("two").textContent == "X" && document.getElementById("three").textContent=="X"){
-                console.log("oned");
+                console.log("Player X Wins!");
+            }else if (document.getElementById("four").textContent == "X" && document.getElementById("five").textContent == "X" && document.getElementById("six").textContent=="X"){
+                console.log("Player X Wins!");
+            }else if (document.getElementById("seven").textContent == "X" && document.getElementById("eight").textContent == "X" && document.getElementById("nine").textContent=="X"){
+                console.log("Player X Wins!");
+            }else if (document.getElementById("one").textContent == "X" && document.getElementById("four").textContent == "X" && document.getElementById("seven").textContent=="X"){
+                console.log("Player X Wins!");
+            }else if (document.getElementById("two").textContent == "X" && document.getElementById("five").textContent == "X" && document.getElementById("eight").textContent=="X"){
+                console.log("Player X Wins!");
+            }else if (document.getElementById("three").textContent == "X" && document.getElementById("six").textContent == "X" && document.getElementById("nine").textContent=="X"){
+                console.log("Player X Wins!");
+            }else if (document.getElementById("one").textContent == "X" && document.getElementById("five").textContent == "X" && document.getElementById("nine").textContent=="X"){
+                console.log("Player X Wins!");
+            }else if (document.getElementById("three").textContent == "X" && document.getElementById("five").textContent == "X" && document.getElementById("seven").textContent=="X"){
+                console.log("Player X Wins!");
             }
+
         }
         return {checkResult}
      }
