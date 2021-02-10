@@ -17,44 +17,11 @@ const players = (name, mark) => {
         let gameBoardArr=gameBoard.boardArr;
         gameBoardArr.push(mark);
     }
-
     return {name, mark, play};
 };
 //create players X and 0 respectively
 const playerOne = players("playerOne", "X");
 const playerTwo= players("playerTwo", "O");
-
-//display controller module
-const displayController = (() => {
-    let i = 0;
-    squares.addEventListener("click", function (e){  
-        
-            //make sure you're targeting the squares and not the whitespace in between them
-            if (e.target.className ==="squares"){
-                    //logic that keeps players from playing in spots that are already taken
-                if (e.target.textContent=="X" || e.target.textContent=="O"){
-                    return;
-                }else{
-                    //invoke the function that lets the players take turns
-                    //this is here bcs if not whenever I push an occupied place, the array gets pushed nevertheless
-                    gameFlow.turnerFunc();
-                    //array elements are written in squares, the array index gets incremented
-                    e.target.textContent= gameBoard.boardArr[i];
-                    i++;
-                    /*
-                    check if the event is cancelable with the preventdefault
-                    var x = e.cancelable;
-                    console.log(x); YES IT IS 
-                    */
-
-                }
-                   
-            }
-      
-    
-    })
-    
-})();
 //variable to check the condition of turning rounds
 let turn = true;
 //Module to control the flow of the game
@@ -72,12 +39,44 @@ const gameFlow = (() => {
         //return the function to use it in display controller
         return {turnerFunc};
 })();
-/*
+//module that returns the factory function that takes the user input manually and marks the board
 const markBoard= (()=>{
+    const manualMark = () => {
+        let i = 0;
+        squares.addEventListener("click", function (e){  
+            
+                //make sure you're targeting the squares and not the whitespace in between them
+                if (e.target.className ==="squares"){
+                        //logic that keeps players from playing in spots that are already taken
+                    if (e.target.textContent=="X" || e.target.textContent=="O"){
+                        return;
+                    }else{
+                        //invoke the function that lets the players take turns
+                        //this is here bcs if not whenever I push an occupied place, the array gets pushed nevertheless
+                        gameFlow.turnerFunc();
+                        //array elements are written in squares, the array index gets incremented
+                        e.target.textContent= gameBoard.boardArr[i];
+                        i++;
+                        /*
+                        check if the event is cancelable with the preventdefault
+                        var x = e.cancelable;
+                        console.log(x); YES IT IS 
+                        */
+    
+                    }
+                       
+                }
+          
+        
+        })
 
 
-
-
-
+    }
+    return {manualMark}
 })();
-*/
+//display controller module
+const displayController = (() => {
+    //call the module that returns the factory function that takes the user input manually and marks the board
+    markBoard.manualMark();
+     
+ })();
