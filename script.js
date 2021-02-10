@@ -78,5 +78,19 @@ const displayController = (() => {
   
  })();
 
+ const checkWinner = (()=>{
+let squareOneText = document.getElementById("one").textContent;
+let squareTwoText = document.getElementById("two").textContent;
+let squareThreeText = document.getElementById("three").textContent;
+let squareFourText = document.getElementById("four").textContent;
+let squareFiveText = document.getElementById("five").textContent;
+let squareSixText = document.getElementById("six").textContent;
+let squareSevenText = document.getElementById("seven").textContent;
+let squareEightText = document.getElementById("eight").textContent;
+let squareNineText = document.getElementById("nine").textContent;
+
+ }
+ )();
+
 
  
