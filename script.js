@@ -1,6 +1,3 @@
-//Note: your array functions a bit different from the what's visible
-//meaning that when you see an X, your array gets an O
-
 //get the squares inside the board
 let squares = document.getElementById('gameBoard');
 //store the gameboard array inside of a gameboard object
@@ -31,17 +28,19 @@ const playerTwo= players("playerTwo", "O");
 const displayController = (() => {
     let i = 0;
     squares.addEventListener("click", function (e){  
-          //invoke the function that let the players take turns
-      gameFlow.turnerFunc();
-        if (e.target.className ==="squares"){
-                e.target.textContent= gameBoard.boardArr[i];
-                i++;
-                /*
-                check if the event is cancelable with the preventdefault
-                var x = e.cancelable;
-                console.log(x); YES IT IS 
-                */
-        }
+        //invoke the function that lets the players take turns
+        gameFlow.turnerFunc();
+            //make sure you're targeting the squares and not the whitespace in between them
+            if (e.target.className ==="squares"){
+                    //array elements are written in squares, the array index gets incremented
+                    e.target.textContent= gameBoard.boardArr[i];
+                    i++;
+                    /*
+                    check if the event is cancelable with the preventdefault
+                    var x = e.cancelable;
+                    console.log(x); YES IT IS 
+                    */
+            }
       
     
     })
@@ -54,15 +53,15 @@ const gameFlow = (() => {
     //function that let the players take turns
     //start with player 2 bcs the array already contains a pregiven X
    const turnerFunc = () => {
-    if(turn){
-        playerOne.play();
-    }else {
-        playerTwo.play();
+        if(turn){
+            playerOne.play();
+        }else {
+            playerTwo.play();
+        }
+        turn=!turn;
     }
-    turn=!turn;
-   }
-   //return the function to use it in display controller
-   return {turnerFunc};
+        //return the function to use it in display controller
+        return {turnerFunc};
 })();
 
 
