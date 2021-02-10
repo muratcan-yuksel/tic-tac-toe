@@ -2,14 +2,8 @@
 let squares = document.getElementById('gameBoard');
 //store the gameboard array inside of a gameboard object
 const gameBoard = {
-    //if I leave the array empty, the code won't work 
-    //bcs the array index listener won't be finding anything
     boardArr : []
-    /* this one displays the last array element, which is X at the moment
-    console.log(gameBoard.boardArr[gameBoard.boardArr.length -1]);
-    */
 }
-
 //Factory Function for players
 const players = (name, mark) => {  
     //function to add player's own mark to the gameBoard.boardArr array
@@ -54,8 +48,9 @@ const markBoard= (()=>{
                         //invoke the function that lets the players take turns
                         //this is here bcs if not whenever I push an occupied place, the array gets pushed nevertheless
                         gameFlow.turnerFunc();
-                        //array elements are written in squares, the array index gets incremented
+                        //array elements are written in squares
                         e.target.textContent= gameBoard.boardArr[i];
+                        //the array index gets incremented
                         i++;
                         /*
                         check if the event is cancelable with the preventdefault
