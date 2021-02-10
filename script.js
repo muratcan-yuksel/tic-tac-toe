@@ -87,7 +87,14 @@ const displayController = (() => {
      //Check all the possible winning combinations, and do something with it
         const checkResult = () =>{
             if (document.getElementById("one").textContent == "X" && document.getElementById("two").textContent == "X" && document.getElementById("three").textContent=="X"){
-                console.log("Player X Wins!");              
+                console.log("Player X Wins!");    
+                squares.addEventListener("click", function (e){
+                    if (e.target.className ==="squares"){
+                        if (e.target.textContent!=="X" || e.target.textContent!=="O"){
+                            e.target.textContent="";
+                        }
+                    }
+                })          
                 }else if (document.getElementById("four").textContent == "X" && document.getElementById("five").textContent == "X" && document.getElementById("six").textContent=="X"){
                     console.log("Player X Wins!");
                 }else if (document.getElementById("seven").textContent == "X" && document.getElementById("eight").textContent == "X" && document.getElementById("nine").textContent=="X"){
