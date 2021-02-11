@@ -172,3 +172,32 @@ const announceResult= document.getElementById("result");
     
  controlGame();
     
+    
+ var squaresPlaced = []; // Stores the squares index placed
+
+ 
+  // var randomIndex = Math.floor((Math.random() * 9) + 1); // Generate a random number between 1 and 9
+ 
+   // Only add the square if it doesn't exist already
+   /*if (squaresPlaced.indexOf(randomIndex) === -1 ) {
+     squaresPlaced.push(randomIndex);
+     document.getElementById('square' + randomIndex).textContent= 'red';
+   } */
+ 
+ /*
+ //generate a random number that which DOES NOT CONTAIN any of the numbers in the squaresPlaced array
+let len = 1;
+let generateRandom = (len, squaresPlaced) => {
+   let randomArray = [];
+   for(let i = 0; i < len; ){
+      let random = Math.floor((Math.random() * 9) +1).toString();
+   if(!squaresPlaced.includes(random) &&
+      !randomArray.includes(random)){
+         randomArray.push(random);
+         i++;
+      }
+   };
+   return squaresPlaced.push(randomArray.toString());
+}
+console.log(generateRandom(len, squaresPlaced));
+document.getElementById("square" + squaresPlaced[squaresPlaced.length -1]).textContent= 'red';  */
