@@ -23,15 +23,17 @@ div > div {
 }
 /* Freezes the gameboard upoen game end */
 .freeze { pointer-events: none; }
-
+/*POsition players*/
 #players{
   display:flex;
   justify-content: space-around;
 }
+/*Position the title*/
 #title{
   display:flex;
   justify-content: center;
 }
+/*Position the result*/
 #result{
   display:flex;
   justify-content: center;
