@@ -22,8 +22,7 @@ let turn = true;
 //Module to control the flow of the game
 const gameFlow = (() => {
     //function that let the players take turns
-    //start with player 2 bcs the array already contains a pregiven X
-   const turnerFunc = () => {
+       const turnerFunc = () => {
         if(turn){
             playerOne.play();
            
