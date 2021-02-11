@@ -1,13 +1,25 @@
+/* 3x3 grid */
 #gameBoard {
   display: grid;
   grid-gap: 1px;
   grid-template-columns: repeat(3, 1fr);
   width: 50vw;
   height: 30vw;
+ 
 }
 
 div > div {
   padding: 10px;
   background-color: #ccc;
 }
+/* Freezes the gameboard upoen game end */
 .freeze { pointer-events: none; }
+
+#players{
+  display:flex;
+  justify-content: space-around;
+}
+#title{
+  display:flex;
+  justify-content: center;
+}
