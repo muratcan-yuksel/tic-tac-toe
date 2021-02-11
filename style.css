@@ -1,18 +1,20 @@
 /* 3x3 grid */
 #gameBoard {
+  /*center the container */
   position: absolute;
   left:25%;
+  bottom:5%;
   border: 15px solid black;
-  min-height: 70vh;
-  max-height: 70vh;
+  min-height: 60vh;
+  max-height: 60vh;
   min-width: 50vw;
   max-width: 50vw;
+  /*create a 3x3 grid*/
   display: grid;
   grid-gap: 1px;
   grid-template-columns: repeat(3, 1fr);
   width: 50vw;
   height: 30vw;
-
 }
 
 div > div {
@@ -29,4 +31,9 @@ div > div {
 #title{
   display:flex;
   justify-content: center;
+}
+#result{
+  display:flex;
+  justify-content: center;
+  
 }
