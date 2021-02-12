@@ -181,7 +181,7 @@ const computerMove = (()=>{
     //generate a random number that which DOES NOT CONTAIN any of the numbers in the squaresPlaced array
     let len = 1;
         let generateRandom = (len, squaresPlaced) => {
-        
+            let randomArray = [];
             for(let i = 0; i < len; ){
                 let random = Math.floor((Math.random() * 9) +1).toString();
                     if(!squaresPlaced.includes(random) &&
