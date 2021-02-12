@@ -176,7 +176,7 @@ const announceResult= document.getElementById("result");
  var squaresPlaced = []; 
 //module that returns the factory function that makes the computer make a move
 const computerMove = (()=>{
-    factory function that makes the computer make a move
+    //factory function that makes the computer make a move
     const AIplay = () =>{
     //generate a random number that which DOES NOT CONTAIN any of the numbers in the squaresPlaced array
     let len = 1;
