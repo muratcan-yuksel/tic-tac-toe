@@ -53,8 +53,15 @@ const markBoard= (()=>{
                         gameFlow.turnerFunc();
                         //array elements are written in squares
                         e.target.textContent= gameBoard.boardArr[i];
-                        //logs the id of the clicked square
-                        console.log(e.target.id);
+                                //This little part is for dealing with the AI
+                                //if the pressed square contains an X
+                                if (e.target.textContent =="X"){
+                                //take the id of that square, turn into an array and get the 7th element
+                                //which is the 6th in index, bcs js arrays start from 0, remember?
+                                //then send that element into the squares placed array that's used for calculations for the AI
+                                squaresPlaced.push(e.target.id.split("")[6]);
+                                }
+                        
                         //the array index gets incremented
                         i++;
                         /*
