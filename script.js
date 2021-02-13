@@ -25,6 +25,7 @@ const gameFlow = (() => {
        const turnerFunc = () => {
         if(turn){
             playerOne.play();
+          //  squaresPlaced.push(gameBoard.boardArr.length -1);
            
         }else {
             playerTwo.play();
@@ -52,6 +53,8 @@ const markBoard= (()=>{
                         gameFlow.turnerFunc();
                         //array elements are written in squares
                         e.target.textContent= gameBoard.boardArr[i];
+                        //logs the id of the clicked square
+                        console.log(e.target.id);
                         //the array index gets incremented
                         i++;
                         /*
@@ -183,6 +186,7 @@ const computerMove = (()=>{
         let generateRandom = (len, squaresPlaced) => {
             let randomArray = [];
             for(let i = 0; i < len; ){
+                //create a random number between 1 and 9 
                 let random = Math.floor((Math.random() * 9) +1).toString();
                     if(!squaresPlaced.includes(random) &&
                         !randomArray.includes(random)){
