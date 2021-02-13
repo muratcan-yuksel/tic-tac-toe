@@ -25,8 +25,7 @@ const gameFlow = (() => {
        const turnerFunc = () => {
         if(turn){
             playerOne.play();
-          //  squaresPlaced.push(gameBoard.boardArr.length -1);
-           
+                     
         }else {
             playerTwo.play();
            
@@ -49,7 +48,7 @@ const markBoard= (()=>{
                         return;
                     }else{
                         //invoke the function that lets the players take turns
-                        //this is here bcs if not whenever I push an occupied place, the array gets pushed nevertheless
+                        //this is here bcs if not, whenever I push an occupied place, the array gets pushed nevertheless
                         gameFlow.turnerFunc();
                         //array elements are written in squares
                         e.target.textContent= gameBoard.boardArr[i];
@@ -60,6 +59,8 @@ const markBoard= (()=>{
                                 //which is the 6th in index, bcs js arrays start from 0, remember?
                                 //then send that element into the squares placed array that's used for calculations for the AI
                                 squaresPlaced.push(e.target.id.split("")[6]);
+                                computerMove.AIplay();
+                                
                                 }
                         
                         //the array index gets incremented
@@ -83,11 +84,16 @@ const markBoard= (()=>{
 })();
 
 
-
+let bombastik = true;
 //display controller module
 const displayController = (() => {
-    //call the module that returns the factory function that takes the user input manually and marks the board
-    markBoard.manualMark();
+    if (bombastik == true){
+        superDeneme.ufDeneme();
+    }else {
+ //call the module that returns the factory function that takes the user input manually and marks the board
+ markBoard.manualMark();
+    }
+   
   
  })();
 
@@ -207,9 +213,57 @@ const computerMove = (()=>{
         console.log(generateRandom(len, squaresPlaced));
         //write it to the DOM
         document.getElementById("square" + squaresPlaced[squaresPlaced.length -1]).textContent= 'O';  
+      playerTwo.play();
         }
 
 return {AIplay}
 
     
 })();
+
+const superDeneme= (() => {
+    const ufDeneme= () => {
+        document.getElementById("playerVsAI").addEventListener("click",function (e){
+            //make sure you're targeting the squares and not the whitespace in between them
+            if (e.target.className ==="squares"){
+              //logic that keeps players from playing in spots that are already taken
+          if (e.target.textContent=="X" || e.target.textContent=="O"){
+              return;
+          }else {
+          
+              playerOne.play();
+          //array elements are written in squares
+          e.target.textContent= gameBoard.boardArr[i];
+          
+          if (e.target.textContent =="X"){
+              //take the id of that square, turn into an array and get the 7th element
+              //which is the 6th in index, bcs js arrays start from 0, remember?
+              //then send that element into the squares placed array that's used for calculations for the AI
+              squaresPlaced.push(e.target.id.split("")[6]);
+              computerMove.AIplay();
+              
+              }
+          
+          //the array index gets incremented
+          i++;
+          
+          
+          }
+            }
+          
+          })
+          
+
+
+
+
+
+    }
+    return{ufDeneme}
+
+
+    })();
+
+
+
+
