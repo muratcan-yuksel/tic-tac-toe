@@ -89,7 +89,7 @@ const markBoard= (()=>{
 //display controller module
 const displayController = (() => {
     //call the module that returns the factory function that takes the user input manually and marks the board
-    markBoard.manualMark();
+   // markBoard.manualMark();
   
  })();
 
@@ -219,35 +219,46 @@ return {AIplay}
 
 const playWithAI= (() => {
     const AIplays= () => {
+       
         document.getElementById("playerVsAI").addEventListener("click",function (e){
+            let i = 0;
             console.log("deniyooorr");
-            //make sure you're targeting the squares and not the whitespace in between them
-            if (e.target.className ==="squares"){
-              //logic that keeps players from playing in spots that are already taken
-          if (e.target.textContent=="X" || e.target.textContent=="O"){
-              return;
-          }else {
-          
-              playerOne.play();
-          //array elements are written in squares
-          e.target.textContent= "X";
-          
-          if (e.target.textContent =="X"){
-              //take the id of that square, turn into an array and get the 7th element
-              //which is the 6th in index, bcs js arrays start from 0, remember?
-              //then send that element into the squares placed array that's used for calculations for the AI
-              squaresPlaced.push(e.target.id.split("")[6]);
-              computerMove.AIplay();
-              
-              }
-          
-          //the array index gets incremented
-          i++;
-          
-          
-          }
-            }
-          
+
+            squares.addEventListener("click", function (e){
+
+                //make sure you're targeting the squares and not the whitespace in between them
+                if (e.target.className ==="squares"){
+                   //logic that keeps players from playing in spots that are already taken
+               if (e.target.textContent=="X" || e.target.textContent=="O"){
+                   return;
+               }else {
+               
+                   playerOne.play();
+               //array elements are written in squares
+               e.target.textContent= "X";
+               
+               if (e.target.textContent =="X"){
+                   //take the id of that square, turn into an array and get the 7th element
+                   //which is the 6th in index, bcs js arrays start from 0, remember?
+                   //then send that element into the squares placed array that's used for calculations for the AI
+                   squaresPlaced.push(e.target.id.split("")[6]);
+                   computerMove.AIplay();
+                   
+                   }
+               
+               //the array index gets incremented
+               i++;
+               
+               
+               }
+                 }
+               
+               
+               
+               
+               
+                   })
+           
           })
           
 
@@ -260,7 +271,6 @@ const playWithAI= (() => {
 
 
     })();
-
 
 
 
