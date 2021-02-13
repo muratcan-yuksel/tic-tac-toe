@@ -52,18 +52,6 @@ const markBoard= (()=>{
                         gameFlow.turnerFunc();
                         //array elements are written in squares
                         e.target.textContent= gameBoard.boardArr[i];
-                                //This little part is for dealing with the AI
-                                //if the pressed square contains an X
-                                if (e.target.textContent =="X"){
-                                //take the id of that square, turn into an array and get the 7th element
-                                //which is the 6th in index, bcs js arrays start from 0, remember?
-                                //then send that element into the squares placed array that's used for calculations for the AI
-                                squaresPlaced.push(e.target.id.split("")[6]);
-                                computerMove.AIplay();
-                                
-                                
-                                }
-                        
                         //the array index gets incremented
                         i++;
                         /*
@@ -124,8 +112,14 @@ const markBoard= (()=>{
 //display controller module
 const displayController = (() => {
     //call the module that returns the factory function that takes the user input manually and marks the board
-   // markBoard.manualMark();
-   markBoard.computerMark();
+  
+    document.getElementById("playerVsPlayer").addEventListener("click", function (e){
+        markBoard.manualMark();
+   })
+    document.getElementById("playerVsAI").addEventListener("click",function (e){ 
+        markBoard.computerMark();
+     })
+ 
   
  })();
 
@@ -260,4 +254,3 @@ return {AIplay}
 
 
 
- //document.getElementById("playerVsAI").addEventListener("click",function (e){  })
