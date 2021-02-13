@@ -81,7 +81,42 @@ const markBoard= (()=>{
 
 
     }
-    return {manualMark}
+    //The logic that lets the player play with the AI
+    const computerMark= () => {       
+        let i = 0;
+        console.log("deniyooorr");
+            squares.addEventListener("click", function (e){
+                //make sure you're targeting the squares and not the whitespace in between them
+                if (e.target.className ==="squares"){
+                   //logic that keeps players from playing in spots that are already taken
+                if (e.target.textContent=="X" || e.target.textContent=="O"){
+                   return;
+                }else {
+                 //here, instead of turnerFunc, we call the playerOne only. The rest is done by the AI, we don't need to call the playerTwo anymore       
+                    playerOne.play();
+                    //array elements are written in squares
+                    e.target.textContent= "X";
+               
+                        if (e.target.textContent =="X"){
+                            //take the id of that square, turn into an array and get the 7th element
+                            //which is the 6th in index, bcs js arrays start from 0, remember?
+                            //then send that element into the squares placed array that's used for calculations for the AI
+                            squaresPlaced.push(e.target.id.split("")[6]);
+                            computerMove.AIplay();
+                            
+                            }
+               
+                            //the array index gets incremented
+                            i++;
+               
+               
+                         }
+                     }            
+                })
+            }
+   
+
+    return {manualMark,computerMark}
 })();
 
 
@@ -90,6 +125,7 @@ const markBoard= (()=>{
 const displayController = (() => {
     //call the module that returns the factory function that takes the user input manually and marks the board
    // markBoard.manualMark();
+   markBoard.computerMark();
   
  })();
 
@@ -217,60 +253,11 @@ return {AIplay}
     
 })();
 
-const playWithAI= (() => {
-    const AIplays= () => {
-       
-        document.getElementById("playerVsAI").addEventListener("click",function (e){
-            let i = 0;
-            console.log("deniyooorr");
-
-            squares.addEventListener("click", function (e){
-
-                //make sure you're targeting the squares and not the whitespace in between them
-                if (e.target.className ==="squares"){
-                   //logic that keeps players from playing in spots that are already taken
-               if (e.target.textContent=="X" || e.target.textContent=="O"){
-                   return;
-               }else {
-               
-                   playerOne.play();
-               //array elements are written in squares
-               e.target.textContent= "X";
-               
-               if (e.target.textContent =="X"){
-                   //take the id of that square, turn into an array and get the 7th element
-                   //which is the 6th in index, bcs js arrays start from 0, remember?
-                   //then send that element into the squares placed array that's used for calculations for the AI
-                   squaresPlaced.push(e.target.id.split("")[6]);
-                   computerMove.AIplay();
-                   
-                   }
-               
-               //the array index gets incremented
-               i++;
-               
-               
-               }
-                 }
-               
-               
-               
-               
-               
-                   })
-           
-          })
-          
 
 
 
-
-
-    }
-    return{AIplays}
-
-
-    })();
+   
 
 
 
+ //document.getElementById("playerVsAI").addEventListener("click",function (e){  })
