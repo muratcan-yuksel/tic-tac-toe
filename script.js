@@ -90,6 +90,7 @@ const markBoard= (()=>{
                             //which is the 6th in index, bcs js arrays start from 0, remember?
                             //then send that element into the squares placed array that's used for calculations for the AI
                             squaresPlaced.push(e.target.id.split("")[6]);
+                            //if I don't put this one, the game crashes upon reaching a tie
                             if (gameBoard.boardArr.length<9){
                                 computerMove.AIplay();
                             }
