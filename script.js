@@ -61,6 +61,7 @@ const markBoard= (()=>{
                                 squaresPlaced.push(e.target.id.split("")[6]);
                                 computerMove.AIplay();
                                 
+                                
                                 }
                         
                         //the array index gets incremented
@@ -84,16 +85,11 @@ const markBoard= (()=>{
 })();
 
 
-let bombastik = true;
+
 //display controller module
 const displayController = (() => {
-    if (bombastik == true){
-        superDeneme.ufDeneme();
-    }else {
- //call the module that returns the factory function that takes the user input manually and marks the board
- markBoard.manualMark();
-    }
-   
+    //call the module that returns the factory function that takes the user input manually and marks the board
+    markBoard.manualMark();
   
  })();
 
@@ -221,9 +217,10 @@ return {AIplay}
     
 })();
 
-const superDeneme= (() => {
-    const ufDeneme= () => {
+const playWithAI= (() => {
+    const AIplays= () => {
         document.getElementById("playerVsAI").addEventListener("click",function (e){
+            console.log("deniyooorr");
             //make sure you're targeting the squares and not the whitespace in between them
             if (e.target.className ==="squares"){
               //logic that keeps players from playing in spots that are already taken
@@ -233,7 +230,7 @@ const superDeneme= (() => {
           
               playerOne.play();
           //array elements are written in squares
-          e.target.textContent= gameBoard.boardArr[i];
+          e.target.textContent= "X";
           
           if (e.target.textContent =="X"){
               //take the id of that square, turn into an array and get the 7th element
@@ -259,7 +256,7 @@ const superDeneme= (() => {
 
 
     }
-    return{ufDeneme}
+    return{AIplays}
 
 
     })();
