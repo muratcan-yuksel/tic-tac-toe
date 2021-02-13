@@ -39,3 +39,7 @@ div > div {
   justify-content: center;
   
 }
+button{
+  display: flex;
+  align-items: flex-end;
+}
