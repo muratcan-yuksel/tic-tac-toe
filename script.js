@@ -90,9 +90,13 @@ const markBoard= (()=>{
                             //which is the 6th in index, bcs js arrays start from 0, remember?
                             //then send that element into the squares placed array that's used for calculations for the AI
                             squaresPlaced.push(e.target.id.split("")[6]);
-                            computerMove.AIplay();
+                            if (gameBoard.boardArr.length<9){
+                                computerMove.AIplay();
+                            }
                             
                             }
+
+                           
                
                             //the array index gets incremented
                             i++;
@@ -111,11 +115,11 @@ const markBoard= (()=>{
 
 //display controller module
 const displayController = (() => {
-    //call the module that returns the factory function that takes the user input manually and marks the board
-  
+    //call the module that returns the factory function that takes the user input manually and marks the board upon click 
     document.getElementById("playerVsPlayer").addEventListener("click", function (e){
         markBoard.manualMark();
    })
+   //call the function that lets the player play against the AI
     document.getElementById("playerVsAI").addEventListener("click",function (e){ 
         markBoard.computerMark();
      })
