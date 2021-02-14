@@ -208,15 +208,15 @@ const announceResult= document.getElementById("result");
 //you get a tie
      function controlGame(){
        
-        if (gameBoard.boardArr.length==9){
-             //freeze the gameBoard (container) div
-             document.getElementById("gameBoard").classList.add("freeze");  
-             alert("tie!");
-        }else{
+       if (gameBoard.boardArr.length<=9) {
         
         gameResult.checkResult();
         setTimeout(controlGame, 200);
-        }
+        } else if (gameBoard.boardArr.length===9 && announceResult.textContent=="Let's debate!"){
+            //freeze the gameBoard (container) div
+            document.getElementById("gameBoard").classList.add("freeze");  
+            alert("tie!");
+       }
     }
     
  controlGame();
