@@ -208,9 +208,17 @@ const announceResult= document.getElementById("result");
      function controlGame(){
         
         if (gameBoard.boardArr.length==9){
+            gameResult.checkResult();
+            if (announceResult.textContent == "Player X Wins!" || announceResult.textContent == "Player O Wins!"){
+               return;
+            }else{
+
             //freeze the gameBoard (container) div
             document.getElementById("gameBoard").classList.add("freeze");  
-            alert("tie!");
+            //announceResult.textContent = "tryy";
+           announceResult.textContent= "Tie!";
+            }
+           
        }else{
        
        gameResult.checkResult();
