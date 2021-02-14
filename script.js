@@ -203,7 +203,9 @@ const announceResult= document.getElementById("result");
         return {checkResult}
      }
      )();
-
+//there's a bug in here
+//if you win at the last moment when all the squares are full 
+//you get a tie
      function controlGame(){
        
         if (gameBoard.boardArr.length==9){
