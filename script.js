@@ -205,29 +205,23 @@ const announceResult= document.getElementById("result");
 //there's a bug in here
 //if you win at the last moment when all the squares are full 
 //you get a tie
-     function controlGame(){
-        
+     function controlGame(){        
         if (gameBoard.boardArr.length==9){
-            gameResult.checkResult();
-            if (announceResult.textContent == "Player X Wins!" || announceResult.textContent == "Player O Wins!"){
-               return;
-            }else{
-
-            //freeze the gameBoard (container) div
-            document.getElementById("gameBoard").classList.add("freeze");  
-            //announceResult.textContent = "tryy";
-           announceResult.textContent= "Tie!";
-            }
-           
+                 gameResult.checkResult();
+                    if (announceResult.textContent == "Player X Wins!" || announceResult.textContent == "Player O Wins!"){
+                         return;
+                    }else{
+                        //freeze the gameBoard (container) div
+                        document.getElementById("gameBoard").classList.add("freeze");  
+                        //announceResult.textContent = "tryy";
+                        announceResult.textContent= "Tie!";
+                    }   
        }else{
-       
-       gameResult.checkResult();
-       setTimeout(controlGame, 200);
+            gameResult.checkResult();
+            setTimeout(controlGame, 200);
        }
-    }
-    
- controlGame();
-    
+    }   
+ controlGame();   
 //array that stores the indexes of squares taken
  var squaresPlaced = []; 
 //module that returns the factory function that makes the computer make a move
