@@ -207,19 +207,17 @@ const announceResult= document.getElementById("result");
 //if you win at the last moment when all the squares are full 
 //you get a tie
      function controlGame(){
-       
-        if (gameBoard.boardArr.length<9) {      
-            gameResult.checkResult();
-            setTimeout(controlGame, 200);
-        }else if (gameBoard.boardArr.length===9){
-            gameResult.checkResult();
-            if ( announceResult.textContent!=="Player X Wins!" ||announceResult.textContent!=="Player O Wins!" ){
-                //freeze the gameBoard (container) div
+        if (gameBoard.boardArr.length==9){
+            //freeze the gameBoard (container) div
             document.getElementById("gameBoard").classList.add("freeze");  
-            announceResult.textContent="Tie!!";
-            }
-            
+            alert("tie!");
+       }else{
+       
+       gameResult.checkResult();
+       setTimeout(controlGame, 200);
        }
+
+     
     }
     
  controlGame();
