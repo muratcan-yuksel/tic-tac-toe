@@ -72,7 +72,6 @@ const markBoard= (()=>{
     //The logic that lets the player play with the AI
     const computerMark= () => {       
         let i = 0;
-        console.log("deniyooorr");
             squares.addEventListener("click", function (e){
                 //make sure you're targeting the squares and not the whitespace in between them
                 if (e.target.className ==="squares"){
@@ -207,6 +206,7 @@ const announceResult= document.getElementById("result");
 //if you win at the last moment when all the squares are full 
 //you get a tie
      function controlGame(){
+        
         if (gameBoard.boardArr.length==9){
             //freeze the gameBoard (container) div
             document.getElementById("gameBoard").classList.add("freeze");  
@@ -216,8 +216,6 @@ const announceResult= document.getElementById("result");
        gameResult.checkResult();
        setTimeout(controlGame, 200);
        }
-
-     
     }
     
  controlGame();
