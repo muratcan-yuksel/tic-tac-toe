@@ -1,5 +1,17 @@
+body {
 
- /* background-image: url("school\ of\ athens.jpg");*/
+  background-image: url("school\ of\ athens.jpg");
+  background-color:
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
 
 
 /* 3x3 grid */
@@ -19,6 +31,9 @@
   grid-template-columns: repeat(3, 1fr);
   width: 50vw;
   height: 30vw;
+}
+#gameBoard:hover{
+  cursor: pointer;
 }
 
 div > div {
@@ -46,4 +61,7 @@ div > div {
 button{
   display: flex;
   align-items: flex-end;
+}
+.squares{
+  border: 2px solid black;
 }
