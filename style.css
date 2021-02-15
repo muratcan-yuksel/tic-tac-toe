@@ -1,26 +1,7 @@
 body {
   /* Need to choose a color*/
   background-color:white;
-  /* Full height */
-  height: 100%;
-
-  /* Center and scale the image nicely */
-  /*background-position: center;*/
-  background-repeat: no-repeat;
-  background-size: cover;
-
 }
-.squares{
-  border: 2px solid black;
-  background-color: white;
-  display: flex;
-align-items: center;
-justify-content: center;
-}
-
-
-
-
 /* 3x3 grid */
 #gameBoard {
   /*center the container */
@@ -36,8 +17,18 @@ justify-content: center;
   display: grid;
   grid-gap: 1px;
   grid-template-columns: repeat(3, 1fr);
-  width: 50vw;
-  height: 30vw;
+  font-weight: 600;
+ /* width: 50vw;
+  height: 30vw;*/
+}
+.squares{
+  border: 2px solid black;
+  background-color: white;
+  display: flex;
+align-items: center;
+justify-content: center;
+font-size: 2em;
+grid-gap: 50px;
 }
 
 
@@ -58,7 +49,7 @@ div > div {
   justify-content: center;
 }
 /*Position the result*/
-#result{
+.result{
   display:flex;
   justify-content: center;
   
