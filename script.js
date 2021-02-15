@@ -52,6 +52,7 @@ const markBoard= (()=>{
                         gameFlow.turnerFunc();
                         //array elements are written in squares
                         e.target.textContent= gameBoard.boardArr[i];
+                       
                         //the array index gets incremented
                         i++;
                         /*
@@ -93,7 +94,7 @@ const markBoard= (()=>{
                             if (gameBoard.boardArr.length<9){
                                 computerMove.AIplay();
                             }
-                            
+                           
                             }
 
                            

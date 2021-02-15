@@ -1,8 +1,6 @@
 body {
-
-  background-image: url("school\ of\ athens.jpg");
   /* Need to choose a color*/
-  background-color:
+  background-color:lavender;
   /* Full height */
   height: 100%;
 
@@ -12,9 +10,7 @@ body {
   background-size: cover;
 
 }
-.xSquare{
-  background-image: url("zizek\ debate.jpg");
-}
+
 
 
 /* 3x3 grid */
