@@ -40,21 +40,54 @@ div > div {
 .freeze { pointer-events: none; }
 /*POsition players*/
 #players{
+  position:relative;
   display:flex;
   justify-content: space-around;
 }
 /*Position the title*/
 #title{
+  position:relative;
   display:flex;
   justify-content: center;
 }
 /*Position the result*/
-.result{
+#result{
+  position:relative;
   display:flex;
   justify-content: center;
+  bottom:30px;
   
 }
+#restart{
+  margin: 0;
+  position: absolute;
+  top: 70%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); 
+}
+#playerVsPlayer{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); 
+}
+#playerVsAI{
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); 
+}
 button{
-  display: flex;
-  align-items: flex-end;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
